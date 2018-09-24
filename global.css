@@ -1,0 +1,238 @@
+/* 
+global.css is the CSS for the entire website. Basic styling found on all pages will be in here
+
+All CSS will be present here while site is static.
+*/
+
+@font-face {
+    src: url(Fonts/Laksaman.ttf);
+    font-family: laks;
+}
+
+
+/*
+    Unorganizable Elements: styling found throughout page(s), possibly in all sections.
+                        *** styles not found here can be found in their respective Styling Section ***
+    
+    Styling found here includes:
+    * h1
+    * h2
+    * button
+*/
+h1, h2 {
+    text-align: center;
+    font-family: laks;
+    color: dodgerblue;
+    background: darkslategray;
+    width: 80%;
+    border-radius: 20px 80px 80px 80px;
+}
+
+a {
+    color: chartreuse;
+    text-decoration-line: none;
+}
+
+
+
+
+
+
+html {
+    background: blanchedalmond;
+}
+
+/*Grid for the entire webpage. Used for each page.*/
+.mainGrid { 
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto 100px;
+    grid-template-areas:
+        "header      header      header      header      header"
+        "leftSideBar mainContent mainContent mainContent rightSideBar"
+        "footer      footer      footer      footer      footer";
+}
+/*
+    Header and related elements styling
+*/
+    header {
+        grid-area: header;
+        justify-self: center;
+        text-align: center;
+        background: darkslategray;
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    .headerLinks a{
+        display: inline;
+    }
+
+    .headerQuote {
+        color: dodgerblue;
+    }
+/*
+    End of Header Styling
+*/
+
+/*
+    Navbar Styling
+*/
+
+    .navbar {
+        background: darkslategray;
+        width: auto;
+        padding-right: 30px;
+        padding-bottom: 15px;
+        max-height: 140px;
+        position: fixed;
+        border-radius: 20px 80px 80px 80px;
+        grid-area: leftSidebar;
+        text-align: left;
+    }
+
+    ul a {
+        display: block;
+        text-decoration: none;
+        
+    }
+
+    ul a:active {
+        background: dodgerblue;
+    }
+
+
+/* 
+Grid for the "mainContent" portion of the mainGrid.
+*/
+    .mainContentGrid {
+        grid-area: mainContent;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+            "aboutMe    aboutMe    aboutMe    aboutMe    aboutMe"
+            "myProjects myProjects myProjects myProjects myProjects"
+            "contactMe  contactMe  contactMe  contactMe  contactMe";
+    }
+
+    .aboutMe {
+        grid-area: aboutMe;
+    }
+
+    .myProjects {
+        grid-area: myProjects;
+    }
+
+    .contactMe {
+        grid-area: contactMe;
+        
+    }
+/*
+    End of mainContentGrid's CSS
+*/
+
+
+/*
+    Section: mainContentGrid => myProjects 
+    Card-style Grid layout for displaying each individual project.
+*/
+    .cardProjects {
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+        "Img         Info"
+        "Description Description";
+    }
+
+    .cardProjectInfo {
+        grid-area: Info;
+    }
+
+    .cardTitle {
+        font-size: 2em;
+    }
+
+    .cardImg {
+        grid-area: Img;
+    }
+
+    .cardDescription {
+        grid-area: Description;
+    }
+
+    
+
+
+
+/*
+    Section: mainContentGrid => contactMe
+    
+    1. Grid layout for the Form.
+    2. input text-field style
+    3. 
+*/
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 
+        "firstname      lastname"
+        "email          phone"
+        "companyWebsite position"
+        "message        message"
+        "submitBtn      submitBtn";
+
+        
+    }
+    input {
+        width: 95%
+    }
+    .formFirstName {
+        grid-area: firstname;
+    }
+
+    .formLastName {
+        grid-area: lastname;
+    }
+
+    .formEmail {
+        grid-area: email;
+    }
+
+    .formPhone {
+        grid-area: phone;
+    }
+
+    .formCompSite {
+        grid-area: companyWebsite;
+    }
+
+    .formPosition {
+        grid-area: position;
+    }
+
+    .formMsg {
+        grid-area: message;
+    }
+    .formMsgTxtArea {
+        width: 99%;
+    }
+
+    .formSubmitBtn {
+        grid-area: submitBtn;
+        text-align: center;
+    }
+/*
+    End of form style
+*/
+
+
+
+/*
+    ALL footer style from here to bottom.
+*/
+    footer {
+        grid-area: footer;
+    }
